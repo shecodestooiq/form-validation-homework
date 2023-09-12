@@ -25,33 +25,49 @@ Please follow the steps below to complete the task:
    - Create a section in your application that displays the data submitted through the form. Use a GET request to fetch this data from the API endpoint provided below.
 4. Use these api endpoints to make your requests
 
-a. **DELETE User Information**
+   a. GET All User Info Records
 
-- **Endpoint:** `https://x8ki-letl-twmt.n7.xano.io/api:q7jBokrt/userinfo/{userinfo_id}`
-- **Description:** This endpoint allows you to delete a specific user information entry identified by `{userinfo_id}`.
-- **HTTP Method:** DELETE
-- **Parameters:** `userinfo_id` path parameter indicating the ID of the user information to delete.
+   Endpoint: https://x8ki-letl-twmt.n7.xano.io/api:q7jBokrt/userinfo
+   Description: This endpoint allows you to retrieve all user information records from the database.
+   HTTP Method: GET
+   Parameters: None
 
-b. **GET Single User Information**
+   b. POST Add User Info Record
 
-- **Endpoint:** `https://x8ki-letl-twmt.n7.xano.io/api:q7jBokrt/userinfo/{userinfo_id}`
-- **Description:** This endpoint allows you to retrieve information for a single user identified by `{userinfo_id}`.
-- **HTTP Method:** GET
-- **Parameters:** `userinfo_id` path parameter indicating the ID of the user information to retrieve.
+   Endpoint: https://x8ki-letl-twmt.n7.xano.io/api:q7jBokrt/userinfo
+   Description: This endpoint allows you to add a new user information record to the database.
+   HTTP Method: POST
+   Parameters: JSON body containing the user information data to be added.
 
-c. **POST Single User Information**
+   c. DELETE User Info Record
 
-- **Endpoint:** `https://x8ki-letl-twmt.n7.xano.io/api:q7jBokrt/userinfo/{userinfo_id}`
-- **Description:** This endpoint allows you to update or modify information for a single user identified by `{userinfo_id}`.
-- **HTTP Method:** POST
-- **Parameters:** `userinfo_id` path parameter indicating the ID of the user information to update. JSON body containing updated user information data.
+   Endpoint: https://x8ki-letl-twmt.n7.xano.io/api:q7jBokrt/userinfo/{userinfo_id}
+   Description: This endpoint allows you to delete a specific user information record identified by {userinfo_id}.
+   HTTP Method: DELETE
+   Parameters: userinfo_id path parameter indicating the ID of the user information record to delete.
+
+   d. GET Single User Info Record
+
+   Endpoint: https://x8ki-letl-twmt.n7.xano.io/api:q7jBokrt/userinfo/{userinfo_id}
+   Description: This endpoint allows you to retrieve information for a single user information record identified by {userinfo_id}.
+   HTTP Method: GET
+   Parameters: userinfo_id path parameter indicating the ID of the user information record to retrieve.
+
+   e. POST Edit User Info Record
+
+   Endpoint: https://x8ki-letl-twmt.n7.xano.io/api:q7jBokrt/userinfo/{userinfo_id}
+   Description: This endpoint allows you to update or modify information for a single user information record identified by {userinfo_id}.
+   HTTP Method: POST
+   Parameters: userinfo_id path parameter indicating the ID of the user information record to update. JSON body containing updated user information data.
 
 Please note that you will need to replace `{userinfo_id}` with the actual ID of the user information you want to interact with when making requests to the corresponding endpoints. Additionally, ensure that you provide the necessary data in the request body when required.
 
-5.  Extra Tasks (Optional) - Edit and Delete Functionality
-    a... Implement Edit Functionality
-    Extend the form to allow users to edit existing data by fetching the data from the API using a GET request and populating the form fields. Implement a button or action to trigger the edit mode, allowing users to make changes and submit updates
-    b... Implement Delete Functionality
-    Add a "Delete" button or action next to each data entry in the displayed list. When clicked, prompt the user with a confirmation dialog, and upon confirmation, send a DELETE request to remove the data from the API.
+You can also read the api documentation => https://x8ki-letl-twmt.n7.xano.io/api:q7jBokrt .
+
+5. Extra Tasks (Optional) - Edit and Delete Functionality
+   a... Implement Edit Functionality
+   Extend the form to allow users to edit existing data by fetching the data from the API using a GET request and populating the form fields. Implement a button or action to trigger the edit mode, allowing users to make changes and submit updates
+   b... Implement Delete Functionality
+   Add a "Delete" button or action next to each data entry in the displayed list. When clicked, prompt the user with a confirmation dialog, and upon confirmation, send a DELETE request to remove the data from the API.
 
 Please feel free to reach out if you have any questions or need further assistance.
