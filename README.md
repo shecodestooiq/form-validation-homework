@@ -65,9 +65,9 @@ Please note that you will need to replace `{userinfo_id}` with the actual ID of 
 You can also read the api documentation => https://x8ki-letl-twmt.n7.xano.io/api:q7jBokrt .
 
 5. Extra Tasks (Optional) - Edit and Delete Functionality
-   a... Implement Edit Functionality
-   Extend the form to allow users to edit existing data by fetching the data from the API using a GET request and populating the form fields. Implement a button or action to trigger the edit mode, allowing users to make changes and submit updates
-   b... Implement Delete Functionality
-   Add a "Delete" button or action next to each data entry in the displayed list. When clicked, prompt the user with a confirmation dialog, and upon confirmation, send a DELETE request to remove the data from the API.
+   1. Implement Edit Functionality
+      Extend the form to allow users to edit existing data by fetching the data from the API using a GET request and populating the form fields. Implement a button or action to trigger the edit mode, allowing users to make changes and submit updates
+   2. Implement Delete Functionality
+      Add a "Delete" button or action next to each data entry in the displayed list. When clicked, prompt the user with a confirmation dialog, and upon confirmation, send a DELETE request to remove the data from the API.
 
 Please feel free to reach out if you have any questions or need further assistance.
