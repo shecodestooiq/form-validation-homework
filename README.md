@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# Form Validation Task
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Dear students,
 
-## Available Scripts
+Please use your ReactJS skills to Build a web application that allows users to submit data through a form. Utilize Formik and Yup for form management and validation, Material UI for the UI components, and integrate with a public API to submit the form data.
 
-In the project directory, you can run:
+## Task Instructions
 
-### `npm start`
+Please follow the steps below to complete the task:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Create a form with the following fields:
+   Name (text input)
+   Email (text input with email validation)
+   Message (textarea)
+   Phone number
+   Use Formik to manage the form state and handle form submissions.
+   Implement Yup schema validation to ensure that:
+   Name is required and should be at least 3 characters long.
+   Email is required and should be a valid email address.
+   Message is required and should have 40 min characters and 255 max characters.
+   Phone number should be a number that is valid in iraq.
+2. Use Material UI to style and layout your form components.
+   Ensure the form is visually appealing, user-friendly, and responsive.
+3. Display the Submitted Data:
+   - Create a section in your application that displays the data submitted through the form. Use a GET request to fetch this data from the API endpoint provided below.
+4. Use these api endpoints to make your requests
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+a. **DELETE User Information**
 
-### `npm test`
+- **Endpoint:** `https://x8ki-letl-twmt.n7.xano.io/api:q7jBokrt/userinfo/{userinfo_id}`
+- **Description:** This endpoint allows you to delete a specific user information entry identified by `{userinfo_id}`.
+- **HTTP Method:** DELETE
+- **Parameters:** `userinfo_id` path parameter indicating the ID of the user information to delete.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+b. **GET Single User Information**
 
-### `npm run build`
+- **Endpoint:** `https://x8ki-letl-twmt.n7.xano.io/api:q7jBokrt/userinfo/{userinfo_id}`
+- **Description:** This endpoint allows you to retrieve information for a single user identified by `{userinfo_id}`.
+- **HTTP Method:** GET
+- **Parameters:** `userinfo_id` path parameter indicating the ID of the user information to retrieve.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+c. **POST Single User Information**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Endpoint:** `https://x8ki-letl-twmt.n7.xano.io/api:q7jBokrt/userinfo/{userinfo_id}`
+- **Description:** This endpoint allows you to update or modify information for a single user identified by `{userinfo_id}`.
+- **HTTP Method:** POST
+- **Parameters:** `userinfo_id` path parameter indicating the ID of the user information to update. JSON body containing updated user information data.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Please note that you will need to replace `{userinfo_id}` with the actual ID of the user information you want to interact with when making requests to the corresponding endpoints. Additionally, ensure that you provide the necessary data in the request body when required.
 
-### `npm run eject`
+5.  Extra Tasks (Optional) - Edit and Delete Functionality
+    a... Implement Edit Functionality
+    Extend the form to allow users to edit existing data by fetching the data from the API using a GET request and populating the form fields. Implement a button or action to trigger the edit mode, allowing users to make changes and submit updates
+    b... Implement Delete Functionality
+    Add a "Delete" button or action next to each data entry in the displayed list. When clicked, prompt the user with a confirmation dialog, and upon confirmation, send a DELETE request to remove the data from the API.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Please feel free to reach out if you have any questions or need further assistance.
