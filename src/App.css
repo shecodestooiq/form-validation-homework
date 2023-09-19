@@ -1,0 +1,11 @@
+body{
+    text-align: center;}
+    h2{
+        margin-top: 90px;
+    }
+    .App{
+        margin: 0px auto;
+        display: flex;
+        flex-direction: column;
+        width: 500px;
+    }
