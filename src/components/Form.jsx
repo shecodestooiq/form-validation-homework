@@ -1,8 +1,16 @@
 import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { Snackbar, TextField, Button } from "@mui/material";
+import {
+	Snackbar,
+	TextField,
+	Button,
+	Checkbox,
+	FormControlLabel,
+} from "@mui/material";
 import Alert from "@mui/material/Alert";
+
+import BasicDatePicker from "./BasicDatePicker";
 
 const validationSchema = Yup.object({
 	name: Yup.string()
@@ -19,6 +27,12 @@ const validationSchema = Yup.object({
 		.required("Phonenumber is required")
 		.matches(/^\d+$/, "Phone number must be a valid number")
 		.length(11, "Phone number must be 11 digits"),
+	date: Yup.date()
+		.min(new Date(), "Date must not be before today")
+		.required("Start date is required"),
+	additionalInfo: Yup.string()
+		.min(10, "Message must be at least 10 characters")
+		.max(100, "Message cannot exceed 100 characters"),
 });
 
 const initialValues = {
@@ -26,11 +40,15 @@ const initialValues = {
 	email: "",
 	message: "",
 	phoneNumber: "",
+	date: "",
+	agree: false,
+	additionalInfo: "",
 };
 
 const Form = () => {
 	const [openSnackbar, setOpenSnackbar] = useState(false);
 	const [formValues, setFormValues] = useState(null);
+	const [selectedDate, setSelectedDate] = useState("");
 
 	const formik = useFormik({
 		initialValues,
@@ -43,6 +61,11 @@ const Form = () => {
 		setOpenSnackbar(true);
 		// console.log(values);
 	}
+
+	const handleDateChange = (date) => {
+		setSelectedDate(date);
+		formik.setFieldValue("date", date);
+	};
 
 	const handleCloseSnackbar = () => {
 		setOpenSnackbar(false);
@@ -131,6 +154,48 @@ const Form = () => {
 						Boolean(formik.errors.phoneNumber)
 					}
 				/>
+
+				<BasicDatePicker
+					name='date'
+					label='Pick a Date'
+					value={selectedDate}
+					onChange={handleDateChange}
+				/>
+
+				<FormControlLabel
+					control={
+						<Checkbox
+							id='agree'
+							name='agree'
+							onChange={formik.handleChange}
+							onBlur={formik.handleBlur}
+							checked={formik.values.agree}
+						/>
+					}
+					label='Agree to terms'
+				/>
+
+				{formik.values.agree && (
+					<TextField
+						label='Additional Info'
+						id='additionalInfo'
+						name='additionalInfo'
+						onChange={formik.handleChange}
+						onBlur={formik.handleBlur}
+						value={formik.values.additionalInfo}
+						variant='outlined'
+						fullWidth
+						margin='normal'
+						helperText={
+							formik.touched.additionalInfo &&
+							formik.errors.additionalInfo
+						}
+						error={
+							formik.touched.additionalInfo &&
+							Boolean(formik.errors.additionalInfo)
+						}
+					/>
+				)}
 
 				<Button
 					type='submit'
